@@ -6,4 +6,6 @@ router.get('/', bookController.get);
 
 router.post('/', bookController.post);
 
+router.put('/:id', bookController.put);
+
 module.exports = router;
