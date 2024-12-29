@@ -60,5 +60,20 @@ module.exports = {
         console.log(updatedBook)
 
         res.send(updatedBook);
+    },
+
+    delete: async (req, res) => {
+
+        const id = parseInt(req.params.id);
+        
+        const deleteBook = await prisma.book.delete({
+            where: {
+                id: id
+            }
+        })
+
+        const allBooks = await prisma.book.findMany();
+
+        res.send(allBooks);
     }
 }
