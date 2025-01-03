@@ -12,19 +12,19 @@ module.exports = {
     },
 
     //gets a specific book 
-    get: async (req, res) => {
+    // get: async (req, res) => {
 
-        // req.params catches id from URL params
-        const id = parseInt(req.params.id);
+    //     // req.params catches id from URL params
+    //     const id = parseInt(req.params.id);
         
-        const specificBook = await prisma.book.findUnique({
-            where: {
-                id: id
-            }
-        })
+    //     const specificBook = await prisma.book.findUnique({
+    //         where: {
+    //             id: id
+    //         }
+    //     })
 
-        res.send(specificBook);
-    },
+    //     res.send(specificBook);
+    // },
 
     // post a new book
     post: async (req, res) => {
@@ -56,8 +56,6 @@ module.exports = {
                 price: req.body.price
             }
         })
-
-        console.log(updatedBook)
 
         res.send(updatedBook);
     },
